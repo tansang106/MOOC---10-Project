@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title Node Authen
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+        a.navbar-brand(href='/') Fixed navbar
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarCollapse.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+            //- li(class=(title == 'Home' ? 'nav-item.active' : 'nav-item.active'))
+              a.nav-link(href='/')
+                | Home 
+                span.sr-only (current)
+            if !user
+              li.nav-item
+                a.nav-link(href='/users/register') Register
+              li.nav-item
+                a.nav-link(href='/users/login') Login
+            if user
+              li.nav-item
+                a.nav-link(href='/users/logout') Logout
+              li.nav-item
+                a.nav-link.disabled(href='#') Disabled
+              form.form-inline.mt-2.mt-md-0
+                input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+                button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+    !=messages()
+    block content
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script.
+      window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.js"><\\/script>')
+    script(src='javascripts/bootstrap.js')
+    script(src='javascripts/jquery.js')

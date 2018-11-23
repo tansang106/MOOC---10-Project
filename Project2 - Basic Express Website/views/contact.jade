@@ -1,0 +1,19 @@
+extends layout
+block content
+    form.form-signin(method='post', action='contact/send')
+        img.mb-4(src='/images/nodejsLogo.png', alt='', width='72', height='72')
+        h1.h3.mb-3.font-weight-normal Contact
+        label.sr-only(for='inputEmail') Email
+        input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='' name='email')
+        .checkbox.mb-3
+        label.sr-only(for='inputPassword') Name
+        input#inputPassword.form-control(type='text', placeholder='Name', required='' autofocus='' name='name')
+        .checkbox.mb-3
+        input#inputMessage.form-control(type='text', placeholder='Message', required='', autofocus='' name='message')
+        label.sr-only(for='inputPassword') Password
+        .checkbox.mb-3
+        //- label
+        //-     input(type='checkbox', value='remember-me')
+        //-     |  Remember me
+        button.btn.btn-lg.btn-primary.btn-block(type='submit') Send
+        p.mt-5.mb-3.text-muted © 2018

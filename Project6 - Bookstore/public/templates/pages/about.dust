@@ -1,0 +1,13 @@
+{>"layouts/master" /}
+
+{<title}
+    Book Store
+{/title}
+
+{<body}
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>About US</h2>
+        </div>
+    </div>
+{/body}
